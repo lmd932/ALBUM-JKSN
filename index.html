@@ -7,25 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <h1 class="title">Mon Album</h1>
+    <header>
+        <h1>JKSN</h1>
     </header>
-    <main class="album">
-        <div class="album-item" onclick="showDetails(this)">
+    <div class="album-item" onmouseenter="showTrackList(this)" onmouseleave="hideTrackList(this)">
+        <div class="album-cover">
             <img src="crack.jpg" alt="Cover 1">
-            <p>JKSN</p>
         </div>
-    </main>
-
-    <!-- Fenêtre modale pour les détails de l'album -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Album Cover">
-            <h2 id="modal-title"></h2>
-            <p id="modal-description">JKSN jeune rapport du 93 sort son première album nommé CRACK</p>
-        </div>
-    </div>
+        <ul class="track-list">
+            <li draggable="true">intro</li>
+            <li draggable="true">Chercher l'argent</li>
+            <li draggable="true">Drogba</li>
+            <li draggable="true">Cash</li>
+            <li draggable="true">Bang Bang</li>
+            <li draggable="true">Cramponner</li>
+            <li draggable="true">Comme les autres</li>
+            <li draggable="true">Christian Dior</li>
+            <li draggable="true">Seine-Saint-Denis</li>
+        </ul>
+    </div>    
 
     <script src="script.js"></script>
 </body>

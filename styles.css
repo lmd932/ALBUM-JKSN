@@ -10,114 +10,72 @@ body {
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   overflow: hidden;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.header {
-  margin-bottom: 20px;
-  animation: fadeIn 1s ease;
-}
-
-.title {
-  font-size: 2em;
-  color: #ffffff;
-  transition: color 0.3s;
-}
-
-.title:hover {
-  color: #f1f1f1;
-}
-
-.album {
-  display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .album-item {
+  width: 350px;
+  height: 350px;
   position: relative;
-  width: 400px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  transform: scale(1);
-}
-
-.album-item:hover {
-  transform: scale(1.1);
-}
-
-.album-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.album-item:hover img {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.4);
-}
-
-.album-item p {
-  margin-top: 10px;
-  text-align: center;
-  color: #aaaaaa;
-  transition: color 0.3s;
-}
-
-.album-item:hover p {
-  color: #ffffff;
-}
-
-/* Animation de fondu d'apparition */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-/* Style pour la fenêtre modale */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.5s;
-}
-
-.modal-content {
   background-color: #333;
-  padding: 20px;
   border-radius: 10px;
-  text-align: center;
-  max-width: 500px;
-  width: 80%;
-  color: #fff;
-}
-
-.modal-content img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
-  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s ease;
   cursor: pointer;
 }
+
+.album-cover,
+.track-list {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  backface-visibility: hidden;
+}
+
+.album-cover {
+  background-color: #333;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.album-cover img {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.track-list {
+  background-color: rgba(0, 0, 0, 0.8); 
+  background-image: url('crack-2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+  list-style: none;
+}
+
+.track-list li {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: rgba(68, 68, 68, 0.8);
+  border-radius: 5px;
+  cursor: grab;
+  transition: background-color 0.5s;
+}
+
+.track-list li:hover {
+  background-color: rgba(85, 85, 85, 0.8);
+}
+
