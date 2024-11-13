@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Interactif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Mon Album</h1>
+    </header>
+    <main class="album">
+        <div class="album-item" onclick="showDetails(this)">
+            <img src="crack.jpg" alt="Cover 1">
+            <p>JKSN</p>
+        </div>
+    </main>
+
+    <!-- Fenêtre modale pour les détails de l'album -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Album Cover">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description">JKSN jeune rapport du 93 sort son première album nommé CRACK</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
